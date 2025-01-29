@@ -47,4 +47,7 @@ tests.isEqual(formatName(true), null, "true/false should not be a string");
 tests.isEqual(formatName(" Jane Doe "), "Jane Doe", "Leading and trailing whitespace should be removed");
 tests.isEqual(formatName("    Jake Doe   "), "Jake Doe", "Multiple leading and trailing whitespaces should be removed");
 
+tests.isEqual(formatName("jane"), "Jane", "Name should be capitalised");
+tests.isEqual(formatName("jake Doe the tHird"), "Jake Doe The THird", "All parts of name should be capitalised");
+
 //#endregion
