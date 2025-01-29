@@ -24,10 +24,10 @@ function multiply(...n){
     let product = 1;
 
     for (let i = 0; i < n.length; i++){
-        if (isNaN(n[i]) || n[i] == null){
+        if (isNaN(parseFloat(n[i])) || parseFloat(n[i]) == null){
             return NaN;
         }
-        product *= n[i];
+        product *= parseFloat(n[i]);
     }
     
     return product;
