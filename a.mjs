@@ -40,11 +40,17 @@ const tests = test("Multiplication function")
 tests.isEqual(multiply(5), 5, "Product of 5 should be 5");
 tests.isEqual(multiply(4, 8, 10), 320, "Product of 4, 8 and 10 should be 320");
 tests.isEqual(multiply(4, -3, 1.5), -18, "Product of 4, -3 and 1.5 should be -18");
-tests.isEqual(multiply(2, -5, -7), 70, "Product of 2, -5 and -7 should be 70");
+tests.isEqual(multiply(2, -5, 1, -7), 70, "Product of 2, -5, 1 and -7 should be 70");
 
 tests.isNotANumber(multiply(5, 'Hello', 2), "Multiplying any number with 'Hello' should return NaN");
 tests.isNotANumber(multiply(3, 8, undefined), "Multiplying any number with undefined should return NaN");
 tests.isNotANumber(multiply(null, 4, 6), "Multiplying any number with null should return NaN");
 tests.isNotANumber(multiply(7, NaN, 9), "Multiplying any number with NaN should return NaN");
+
+tests.isEqual(multiply(5, 0), 0, "Product of 5 and 0 should be 0");
+tests.isEqual(multiply(7, Infinity, 13.5), Infinity, "Product of 7, Infinity and 13.5 should be Infinity");
+tests.isEqual(multiply(3, -Infinity, 8), -Infinity, "Product of 3, -Infinity and 8 should be -Infinity");
+tests.isEqual(multiply(6, Infinity, -2), -Infinity, "Product of 6, Infinity and -2 should be -Infinity");
+tests.isEqual(multiply(-4, -Infinity, 1.8), Infinity, "Product of -4, -Infinity and 1.8 should be Infinity");
 
 //#endregion
