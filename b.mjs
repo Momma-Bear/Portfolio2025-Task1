@@ -23,6 +23,10 @@ import test from "./test.mjs";
 function formatName(name){
     let formattedName = "";
 
+    if (typeof name != "string"){
+        return null;
+    }
+
     return formattedName;
 }
 
