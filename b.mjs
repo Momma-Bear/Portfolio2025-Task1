@@ -44,10 +44,28 @@ tests.isEqual(formatName(undefined), null, "Undefined should not be a string");
 tests.isEqual(formatName(Infinity), null, "Infinity should not be a string");
 tests.isEqual(formatName(true), null, "true/false should not be a string");
 
+
 tests.isEqual(formatName(" Jane Doe "), "Jane Doe", "Leading and trailing whitespace should be removed");
 tests.isEqual(formatName("    Jake Doe   "), "Jake Doe", "Multiple leading and trailing whitespaces should be removed");
 
 tests.isEqual(formatName("jane"), "Jane", "Name should be capitalised");
 tests.isEqual(formatName("jake Doe the tHird"), "Jake Doe The THird", "All parts of name should be capitalised");
+
+tests.isEqual(formatName(""), "", "Empty string should return an empty string");
+tests.isEqual(formatName("   "), "", "String consisting of only whitespace should return an empty string");
+
+tests.isEqual(formatName("J@ne Doe"), null, "String containing '@' should return null");
+tests.isEqual(formatName("Ja#e Doe"), null, "String containing '#' should return null");
+tests.isEqual(formatName("Jake D¤e"), null, "String containing '¤' should return null");
+tests.isEqual(formatName("£ane Doe"), null, "String containing '£' should return null");
+
+let specialCharacters = ["|", "!", '"', "@", "#", "£", "¤", "$", "%", "&", "/", "{", "(", "[", "]", ")", "}", "=", "+", "?", "\\", "`", "^", "¨", "~", "*", "'", "-", "_", "<", ">"]
+
+for (let i = 0; i < specialCharacters.length; i++){
+    tests.isEqual(formatName(specialCharacters[i]), null, "String containing " + specialCharacters[i] + " should return null");
+}
+
+
+
 
 //#endregion
