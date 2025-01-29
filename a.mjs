@@ -24,9 +24,12 @@ function multiply(...n){
     let product = 1;
 
     for (let i = 0; i < n.length; i++){
+        if (isNaN(n[i]) || n[i] == null){
+            return NaN;
+        }
         product *= n[i];
     }
-
+    
     return product;
 }
 
