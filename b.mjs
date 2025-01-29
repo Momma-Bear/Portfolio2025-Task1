@@ -37,4 +37,11 @@ function formatName(name){
 
 let tests = test("Name Formatting Function");
 
+tests.isEqual(formatName(1), null, "A number should not be a string");
+tests.isEqual(formatName(null), null, "Null should not be a string");
+tests.isEqual(formatName(NaN), null, "NaN should not be a string");
+tests.isEqual(formatName(undefined), null, "Undefined should not be a string");
+tests.isEqual(formatName(Infinity), null, "Infinity should not be a string");
+tests.isEqual(formatName(true), null, "true/false should not be a string");
+
 //#endregion
