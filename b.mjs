@@ -20,6 +20,8 @@ import test from "./test.mjs";
 //#region function -----------------------------------------------------------------
 // Write your function her.
 
+let specialCharacters = ["|", "!", '"', "@", "#", "£", "¤", "$", "%", "&", "/", "{", "(", "[", "]", ")", "}", "=", "+", "?", "\\", "`", "^", "¨", "~", "*", "'", "-", "_", "<", ">"];
+
 function formatName(name){
     let formattedName = "";
 
@@ -29,6 +31,11 @@ function formatName(name){
 
     let nameStarted = false;
     for (let i = 0; i < name.length; i++){
+        
+        if (specialCharacters.includes(name[i])){
+            return null;
+        }
+
         if (name[i] == " " && (name[i+1] == " " || name[i+1] == undefined)){}
         else if (name[i] != " " || nameStarted == true){
             nameStarted = true;
@@ -77,8 +84,6 @@ tests.isEqual(formatName("J@ne Doe"), null, "String containing '@' should return
 tests.isEqual(formatName("Ja#e Doe"), null, "String containing '#' should return null");
 tests.isEqual(formatName("Jake D¤e"), null, "String containing '¤' should return null");
 tests.isEqual(formatName("£ane Doe"), null, "String containing '£' should return null");
-
-let specialCharacters = ["|", "!", '"', "@", "#", "£", "¤", "$", "%", "&", "/", "{", "(", "[", "]", ")", "}", "=", "+", "?", "\\", "`", "^", "¨", "~", "*", "'", "-", "_", "<", ">"]
 
 for (let i = 0; i < specialCharacters.length; i++){
     tests.isEqual(formatName(specialCharacters[i]), null, "String containing " + specialCharacters[i] + " should return null");
