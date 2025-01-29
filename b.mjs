@@ -20,7 +20,11 @@ import test from "./test.mjs";
 //#region function -----------------------------------------------------------------
 // Write your function her.
 
+function formatName(name){
+    let formattedName = "";
 
+    return formattedName;
+}
 
 //#endregion
 
@@ -31,6 +35,6 @@ import test from "./test.mjs";
 //#region Tests --------------------------------------------------------------------
 // Write your tests her.
 
-
+let tests = test("Name Formatting Function");
 
 //#endregion
