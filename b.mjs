@@ -32,7 +32,11 @@ function formatName(name){
         if (name[i] == " " && (name[i+1] == " " || name[i+1] == undefined)){}
         else if (name[i] != " " || nameStarted == true){
             nameStarted = true;
-            formattedName += name[i];
+            if (name[i] != " " && (name[i-1] == " " || name[i-1] == undefined)){
+                formattedName += name[i].toUpperCase();
+            } else {
+                formattedName += name[i];
+            }
         }
     }
     
