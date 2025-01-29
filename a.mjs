@@ -38,5 +38,8 @@ function multiply(...n){
 const tests = test("Multiplication function")
 
 tests.isNotANumber(multiply(5, 'Hello', 2), "Multiplying any number with 'Hello' should return NaN");
+tests.isNotANumber(multiply(3, 8, undefined), "Multiplying any number with undefined should return NaN");
+tests.isNotANumber(multiply(null, 4, 6), "Multiplying any number with null should return NaN");
+tests.isNotANumber(multiply(7, NaN, 9), "Multiplying any number with NaN should return NaN");
 
 //#endregion
