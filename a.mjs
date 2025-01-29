@@ -37,6 +37,11 @@ function multiply(...n){
 
 const tests = test("Multiplication function")
 
+tests.isEqual(multiply(5), 5, "Product of 5 should be 5");
+tests.isEqual(multiply(4, 8, 10), 320, "Product of 4, 8 and 10 should be 320");
+tests.isEqual(multiply(4, -3, 1.5), -18, "Product of 4, -3 and 1.5 should be -18");
+tests.isEqual(multiply(2, -5, -7), 70, "Product of 2, -5 and -7 should be 70");
+
 tests.isNotANumber(multiply(5, 'Hello', 2), "Multiplying any number with 'Hello' should return NaN");
 tests.isNotANumber(multiply(3, 8, undefined), "Multiplying any number with undefined should return NaN");
 tests.isNotANumber(multiply(null, 4, 6), "Multiplying any number with null should return NaN");
