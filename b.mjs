@@ -27,6 +27,16 @@ function formatName(name){
         return null;
     }
 
+    let nameStarted = false;
+    for (let i = 0; i < name.length; i++){
+        if (name[i] == " " && (name[i+1] == " " || name[i+1] == undefined)){}
+        else if (name[i] != " " || nameStarted == true){
+            nameStarted = true;
+            formattedName += name[i];
+        }
+    }
+    
+
     return formattedName;
 }
 
