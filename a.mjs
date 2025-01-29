@@ -52,5 +52,7 @@ tests.isEqual(multiply(7, Infinity, 13.5), Infinity, "Product of 7, Infinity and
 tests.isEqual(multiply(3, -Infinity, 8), -Infinity, "Product of 3, -Infinity and 8 should be -Infinity");
 tests.isEqual(multiply(6, Infinity, -2), -Infinity, "Product of 6, Infinity and -2 should be -Infinity");
 tests.isEqual(multiply(-4, -Infinity, 1.8), Infinity, "Product of -4, -Infinity and 1.8 should be Infinity");
+tests.isEqual(multiply(5, Infinity, 0), 0, "Product of 5, Infinity and 0 should be 0");
+tests.isEqual(multiply(8, -Infinity, NaN), NaN, "Product of 8, -Infinity and NaN should be NaN");
 
 //#endregion
