@@ -44,6 +44,7 @@ tests.isEqual(formatName(undefined), null, "Undefined should not be a string");
 tests.isEqual(formatName(Infinity), null, "Infinity should not be a string");
 tests.isEqual(formatName(true), null, "true/false should not be a string");
 tests.isEqual(formatName(["Jane", "John", "Doe"]), null, "Array should not be a string");
+tests.isEqual(formatName([]), null, "An empty array should not be a string");
 
 tests.isEqual(formatName(" Jane Doe "), "Jane Doe", "Leading and trailing whitespace should be removed");
 tests.isEqual(formatName("    Jake Doe   "), "Jake Doe", "Multiple leading and trailing whitespaces should be removed");
