@@ -23,6 +23,10 @@ import test from "./test.mjs";
 function multiply(...n){
     let product = 1;
 
+    for (let i = 0; i < n.length; i++){
+        product *= n[i];
+    }
+
     return product;
 }
 
