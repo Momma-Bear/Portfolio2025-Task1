@@ -11,7 +11,11 @@ import test from "./test.mjs";
 */
 
 function sequence(n) {
+    let output = null;
 
+    output = n;
+
+    return output;
 }
 
 //#region Tests --------------------------------------------------------------------
