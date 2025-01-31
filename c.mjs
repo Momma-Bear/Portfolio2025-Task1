@@ -12,8 +12,20 @@ import test from "./test.mjs";
 
 function sequence(n) {
     let output = null;
+    let prev = 0;
+    let prev2 = 0;
 
-    output = n;
+    for (let i = 0; i <= n; i++){
+        if (i < 2){
+            output += i;
+            prev2 = prev;
+            prev = i;
+        } else {
+            output = prev + prev2;
+            prev2 = prev;
+            prev = output;
+        }
+    }
 
     return output;
 }
