@@ -12,19 +12,19 @@ import test from "./test.mjs";
 
 function sequence(n) {
     let output = null;
-    let prev = 0;
-    let prev2 = 0;
+    let prev = null;
+    let prev2 = null;
 
     if (Number.isInteger(n)){
         for (let i = 0; i <= n; i++){
             if (i < 2){
                 output += i;
-               prev2 = prev;
-               prev = i;
+                prev2 = prev;
+                prev = i;
             } else {
-              output = prev + prev2;
-               prev2 = prev;
-               prev = output;
+                output = prev + prev2;
+                prev2 = prev;
+                prev = output;
             }
         }
     }
