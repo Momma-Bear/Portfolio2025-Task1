@@ -62,6 +62,7 @@ function formatName(name){
 
 let tests = test("Name Formatting Function");
 
+// Invalid inputs
 tests.isEqual(formatName(1), null, "A number should not be a string");
 tests.isEqual(formatName(null), null, "Null should not be a string");
 tests.isEqual(formatName(NaN), null, "NaN should not be a string");
@@ -71,15 +72,19 @@ tests.isEqual(formatName(true), null, "true/false should not be a string");
 tests.isEqual(formatName(["Jane", "John", "Doe"]), null, "Array should not be a string");
 tests.isEqual(formatName([]), null, "An empty array should not be a string");
 
+// Whitespace cases
 tests.isEqual(formatName(" Jane Doe "), "Jane Doe", "Leading and trailing whitespace should be removed");
 tests.isEqual(formatName("    Jake Doe   "), "Jake Doe", "Multiple leading and trailing whitespaces should be removed");
 
+// Capitalisation
 tests.isEqual(formatName("jane"), "Jane", "Name should be capitalised");
 tests.isEqual(formatName("jake Doe the tHird"), "Jake Doe The THird", "All parts of name should be capitalised");
 
+// Empty input
 tests.isEqual(formatName(""), "", "Empty string should return an empty string");
 tests.isEqual(formatName("   "), "", "String consisting of only whitespace should return an empty string");
 
+// Special characters
 tests.isEqual(formatName("J@ne Doe"), null, "String containing '@' should return null");
 tests.isEqual(formatName("Ja#e Doe"), null, "String containing '#' should return null");
 tests.isEqual(formatName("Jake D¤e"), null, "String containing '¤' should return null");
