@@ -47,6 +47,10 @@ tests.isEqual(guessNumber(30, 10.5), null, "A decimal guess should not count as 
 tests.isEqual(guessNumber(7.5, 25), null, "A decimal target should not count as an integer");
 
 // Edge cases
-
+tests.isEqual(guessNumber(-12, -7), "Too high", "Function should treat negative numbers correctly (-12 < -7)");
+tests.isEqual(guessNumber(-12, -17), "Too low", "Function should treat negative numbers correctly (-12 > -17)");
+tests.isEqual(guessNumber(-12, -12), "Correct!", "Function should treat negative numbers correctly (-12 = -12)");
+tests.isEqual(guessNumber(0, -1), "Too low", "Function should treat close numbers correctly (0 > -1)");
+tests.isEqual(guessNumber(0, 1), "Too low", "Function should treat close numbers correctly (0 < 1)");
 
 //#endregion
