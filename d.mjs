@@ -40,7 +40,11 @@ tests.isEqual(guessNumber(10, 15), "Too high", "If target is 10 and guess is 15,
 tests.isEqual(guessNumber(10, 10), "Correct!", "If target is 10 and guess is 10, return 'Correct!'");
 
 // Invalid inputs
-
+tests.isEqual(guessNumber(20, NaN), null, "If the guess is not an integer, return null");
+tests.isEqual(guessNumber(undefined, 15), null, "If the target is not an integer, return null");
+tests.isEqual(guessNumber(null, Infinity), null, "If neither the target or the guess are integers, return null");
+tests.isEqual(guessNumber(30, 10.5), null, "A decimal guess should not count as an integer");
+tests.isEqual(guessNumber(7.5, 25), null, "A decimal target should not count as an integer");
 
 // Edge cases
 
