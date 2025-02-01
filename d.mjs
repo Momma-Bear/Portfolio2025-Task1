@@ -24,7 +24,17 @@ import test from "./test.mjs";
 // Write your function her.
 
 function guessNumber(target, guess) {
+    let guessOutcome = null;
+    
+    if (target > guess){
+        guessOutcome = "Too low";
+    } else if (target < guess){
+        guessOutcome = "Too high";
+    } else if (target == guess){
+        guessOutcome = "Correct!";
+    }
 
+    return guessOutcome;
 }
 
 
